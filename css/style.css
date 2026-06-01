@@ -829,6 +829,7 @@ ul { list-style: none; }
    RESPONSIVE
    ======================== */
 @media (max-width: 900px) {
+  .nav__inner { justify-content: space-between; }
   .nav__links { display: none; }
   .nav__links.open {
     display: flex; flex-direction: column;
@@ -839,7 +840,16 @@ ul { list-style: none; }
     border-bottom: 1px solid rgba(var(--dark-rgb), 0.08);
   }
   .nav__cta { display: none; }
-  .nav__burger { display: flex; }
+  .nav__burger {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+  .nav__burger span { background: var(--text); }
   .stats__inner { grid-template-columns: repeat(2, 1fr); }
   .about-strip { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-strip__img-frame { max-width: 360px; margin: 0 auto; }
