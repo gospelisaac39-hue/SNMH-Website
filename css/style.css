@@ -936,3 +936,84 @@ ul { list-style: none; }
   .services-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  .nav { height: 60px; }
+  .nav__inner {
+    height: 60px;
+    padding: 0 1rem;
+  }
+  .nav__logo-text { font-size: 0.85rem; }
+  .nav__logo-img {
+    width: 30px;
+    height: 30px;
+  }
+  .nav__burger {
+    width: 42px;
+    height: 42px;
+  }
+  .nav__burger span {
+    width: 26px;
+    height: 2.5px;
+    background: #111111;
+    margin-bottom: 5px;
+  }
+  .nav__burger span:last-child { margin-bottom: 0; }
+  .nav__cta {
+    display: inline-flex !important;
+    font-size: 0.75rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .nav__links.open { top: 60px; padding: 1rem; }
+  .hero {
+    padding: 80px 1rem 3rem;
+  }
+  .hero__title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  .hero__desc {
+    font-size: 0.88rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .book-card__title,
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+  .body-text,
+  .about-strip__content p,
+  .book-card__body p,
+  .service-card p,
+  .testimonial__text,
+  .footer__contact p,
+  .contact-page p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .service-card__icon,
+  .book-card__tree,
+  .book-card__africa,
+  .stat__plus {
+    font-size: 1.4rem;
+  }
+  .hero,
+  .stats,
+  .about-strip,
+  .books-section,
+  .services-section,
+  .testimonial,
+  .cta-banner,
+  .footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
