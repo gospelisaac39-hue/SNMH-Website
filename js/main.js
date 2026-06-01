@@ -5,10 +5,20 @@
 // Mobile nav toggle
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
+const navLinkItems = document.querySelectorAll('.nav__links .nav__link');
 if (burger && navLinks) {
-  burger.addEventListener('click', () => {
+  const toggleMenu = () => {
     navLinks.classList.toggle('open');
     burger.classList.toggle('active');
+  };
+
+  burger.addEventListener('click', toggleMenu);
+
+  navLinkItems.forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('active');
+    });
   });
 }
 
