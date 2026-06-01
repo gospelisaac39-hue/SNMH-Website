@@ -6,20 +6,27 @@
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 const navLinkItems = document.querySelectorAll('.nav__links .nav__link');
+const navCta = document.querySelector('.nav__cta');
 if (burger && navLinks) {
   const toggleMenu = () => {
     navLinks.classList.toggle('open');
     burger.classList.toggle('active');
   };
 
+  const closeMenu = () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('active');
+  };
+
   burger.addEventListener('click', toggleMenu);
 
   navLinkItems.forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('active');
-    });
+    link.addEventListener('click', closeMenu);
   });
+
+  if (navCta) {
+    navCta.addEventListener('click', closeMenu);
+  }
 }
 
 // Scroll: nav shadow
