@@ -345,9 +345,9 @@ ul { list-style: none; }
   font-size: clamp(4rem, 7vw, 6rem);
   line-height: 0.92; margin-bottom: 0.35rem;
   font-weight: 700;
-  font-family: 'UnifrakturCook', cursive;
-  letter-spacing: 0.08em;
-  text-transform: none;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
 .hero__hero-label {
