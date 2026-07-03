@@ -6,8 +6,116 @@
   <title>Services – Success Nwoko Mentoring Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* EQ CONVERSATION */
+    .eq-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 460px;
+    }
+    .eq-summary__image {
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .eq-summary__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.6s ease;
+    }
+    .eq-summary__image:hover img {
+      transform: scale(1.03);
+    }
+    .eq-summary__content {
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 5rem;
+    }
+    .eq-summary__content h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .eq-summary__content p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    /* TERI — MIRRORED */
+    .teri-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 460px;
+    }
+    .teri-summary__content {
+      background: var(--off-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 5rem;
+    }
+    .teri-summary__content h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .teri-summary__content p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .teri-summary__image {
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .teri-summary__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.6s ease;
+    }
+    .teri-summary__image:hover img {
+      transform: scale(1.03);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .eq-summary {
+        grid-template-columns: 1fr;
+      }
+      .eq-summary__image {
+        height: 260px;
+      }
+      .eq-summary__content {
+        padding: 2.5rem 1.5rem;
+      }
+      .teri-summary {
+        grid-template-columns: 1fr;
+      }
+      .teri-summary__image {
+        height: 260px;
+        order: -1;
+      }
+      .teri-summary__content {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,12 +139,14 @@
     </div>
   </nav>
 
+  <!-- PAGE HERO -->
   <section class="page-hero">
     <p class="section-eyebrow">What I Offer</p>
     <h1>Services & Programmes</h1>
     <p>Tailored coaching, training, and speaking engagements rooted in the R.E.A.L. framework — designed to create lasting transformation in individuals and organisations.</p>
   </section>
 
+  <!-- EQ CONVERSATION -->
   <section class="eq-summary">
     <div class="eq-summary__image">
       <img src="img/eq-conversation.jpg" alt="EQ Conversation with Mentor Success Nwoko">
@@ -45,50 +155,73 @@
       <p class="section-eyebrow">EQ Conversation</p>
       <h2>Join the EQ Conversation with Mentor Success</h2>
       <p>Register for the live mentor-led session that brings the books and mentorship principles together through practical emotional intelligence coaching.</p>
-      <a href="https://bit.ly/4xYbB6P" class="btn btn--gold" target="_blank" rel="noopener">Register for Free</a>
+      <a href="https://bit.ly/4xYbB6P" class="btn btn--blue" target="_blank" rel="noopener">Register for Free</a>
     </div>
   </section>
 
+  <!-- TERI — MIRRORED LAYOUT -->
+  <section class="teri-summary">
+    <div class="teri-summary__content">
+      <p class="section-eyebrow">Assessment Tool</p>
+      <h2>Teachers Emotional Readiness Index (TERI)</h2>
+      <p>The TERI Framework is a diagnostic tool designed to assess and develop the emotional readiness of teachers and educators. Discover your emotional strengths, identify blind spots, and receive a personalised roadmap to become a more connected and impactful teacher.</p>
+      <a href="https://osm5rifxpa.zite.so" class="btn btn--blue" target="_blank" rel="noopener">Take the TERI Assessment →</a>
+    </div>
+    <div class="teri-summary__image">
+      <img src="img/teri.png" alt="TERI Framework Assessment">
+    </div>
+  </section>
+
+  <!-- R.E.A.L PILLARS -->
   <section style="background: var(--off-white); padding: 6rem 2rem;">
     <div style="max-width: 1200px; margin: 0 auto;">
       <p class="section-eyebrow">Our Framework</p>
       <h2 class="section-title" style="text-align: center;">The R.E.A.L. Pillars</h2>
-      <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.05rem;">
+      <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 0.95rem;">
         Every programme at Success Nwoko Mentoring Hub is built on seven interconnected areas of human development
       </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">R — Relationship Intelligence</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Building authentic connections, empathy, and emotional awareness across personal and professional relationships.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">R — Relationship Intelligence</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Building authentic connections, empathy, and emotional awareness across personal and professional relationships.</p>
         </div>
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">E — Entrepreneurship Intelligence</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Developing the mindset, skills, and discipline to build sustainable businesses and financial independence.</p>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">E — Entrepreneurship Intelligence</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Developing the mindset, skills, and discipline to build sustainable businesses and financial independence.</p>
         </div>
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">A — Academic Intelligence</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Cultivating critical thinking, learning strategies, and intellectual discipline for continuous growth.</p>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">A — Academic Intelligence</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Cultivating critical thinking, learning strategies, and intellectual discipline for continuous growth.</p>
         </div>
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">L — Leadership Formation</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Building vision-driven, servant-hearted leaders who inspire teams and create lasting value.</p>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">L — Leadership Formation</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Building vision-driven, servant-hearted leaders who inspire teams and create lasting value.</p>
         </div>
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">E — Emotional Intelligence</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Mastering self-awareness, empathy, and emotional regulation for healthier decisions and relationships.</p>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">E — Emotional Intelligence</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Mastering self-awareness, empathy, and emotional regulation for healthier decisions and relationships.</p>
         </div>
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">F — Financial Intelligence</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Building wealth-creating mindsets and practical financial management for long-term security.</p>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">F — Financial Intelligence</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Building wealth-creating mindsets and practical financial management for long-term security.</p>
         </div>
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08); grid-column: span 1;">
-          <h4 style="color: var(--gold); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-display);">P — Purpose Alignment</h4>
-          <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Discovering and living out your unique calling — connecting personal development to deeper meaning.</p>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 16px; border: 1px solid var(--stone); border-top: 3px solid var(--blue);">
+          <h4 style="color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-display); font-weight: 600;">P — Purpose Alignment</h4>
+          <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.75;">Discovering and living out your unique calling — connecting personal development to deeper meaning.</p>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- SERVICES LIST -->
   <section class="services-page">
     <div class="services-list">
 
@@ -98,7 +231,7 @@
           <h3>EQ Coaching (1-on-1)</h3>
           <p>Personal one-on-one coaching sessions to help you understand and master your emotional patterns. We'll identify the emotional blocks holding you back in life, relationships, or career — and build a clear plan to overcome them.</p>
           <p><strong>Best for:</strong> Individuals seeking personal transformation, professionals wanting to lead better, entrepreneurs building with clarity.</p>
-          <a href="contact.html" class="btn btn--gold">Book a Session</a>
+          <a href="contact.html" class="btn btn--blue">Book a Session</a>
         </div>
       </div>
 
@@ -108,7 +241,7 @@
           <h3>Financial Mindset Coaching</h3>
           <p>Rooted in the principles of <em>Mastering Money Through EQ</em>, this coaching programme helps you identify and rewire the emotional patterns that drive poor financial decisions — and replace them with habits that build wealth.</p>
           <p><strong>Best for:</strong> Anyone struggling with money management, savings, investment decisions, or financial anxiety.</p>
-          <a href="contact.html" class="btn btn--gold">Book a Session</a>
+          <a href="contact.html" class="btn btn--blue">Book a Session</a>
         </div>
       </div>
 
@@ -118,7 +251,7 @@
           <h3>Sales Training & Team Workshops</h3>
           <p>Based on the principles in <em>Smart Emotion Better Sales – African Way</em>, this training equips sales teams with EQ tools that help them connect, build trust, handle rejection, and close deals in the African market context.</p>
           <p><strong>Best for:</strong> Sales managers, marketing teams, entrepreneurs, insurance agents, real estate professionals.</p>
-          <a href="contact.html" class="btn btn--gold">Request Training</a>
+          <a href="contact.html" class="btn btn--blue">Request Training</a>
         </div>
       </div>
 
@@ -128,7 +261,7 @@
           <h3>Youth Mentoring Programme</h3>
           <p>A structured programme for teenagers and young adults, inspired by <em>Choose Different</em>. Success helps young people navigate identity, peer pressure, digital life, and decision-making with emotional strength and purpose.</p>
           <p><strong>Best for:</strong> Secondary schools, churches, youth organisations, and parents seeking structured mentoring for teens.</p>
-          <a href="contact.html" class="btn btn--gold">Enquire Now</a>
+          <a href="contact.html" class="btn btn--blue">Enquire Now</a>
         </div>
       </div>
 
@@ -138,7 +271,7 @@
           <h3>Keynote Speaking</h3>
           <p>Success delivers powerful, engaging talks on emotional intelligence, financial freedom, sales excellence, and youth development. His sessions are research-backed, culturally grounded, and built to move audiences to action.</p>
           <p><strong>Best for:</strong> Conferences, corporate events, church programmes, school assemblies, graduation ceremonies.</p>
-          <a href="contact.html" class="btn btn--gold">Book a Speaker</a>
+          <a href="contact.html" class="btn btn--blue">Book a Speaker</a>
         </div>
       </div>
 
@@ -148,22 +281,35 @@
           <h3>Corporate EQ Workshops</h3>
           <p>Full-day or multi-day workshops for organisations looking to build emotionally intelligent teams and leaders. Customised to your industry, team size, and specific challenges.</p>
           <p><strong>Best for:</strong> HR teams, leadership development programmes, banks, NGOs, and growth-stage companies.</p>
-          <a href="contact.html" class="btn btn--gold">Get a Proposal</a>
+          <a href="contact.html" class="btn btn--blue">Get a Proposal</a>
+        </div>
+      </div>
+
+      <div class="service-full fade-up">
+        <div class="service-full__icon">📊</div>
+        <div>
+          <h3>Teachers Emotional Readiness Index (TERI Framework)</h3>
+          <p>The TERI Framework is a diagnostic tool designed to assess and develop the emotional readiness of teachers and educators. It measures how emotionally prepared a teacher is to create a safe, connected, and high-impact learning environment for students.</p>
+          <p>Using the TERI assessment, educators gain deep insight into their emotional strengths and blind spots — and receive a personalised roadmap to grow as emotionally intelligent teachers who truly connect with and impact their students.</p>
+          <p><strong>Best for:</strong> Teachers, school administrators, education consultants, and institutions committed to emotionally intelligent learning environments.</p>
+          <a href="https://osm5rifxpa.zite.so" class="btn btn--blue" target="_blank" rel="noopener">Take the TERI Assessment →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-banner">
     <div class="cta-banner__orb"></div>
     <div class="cta-banner__content">
       <h2>Not Sure Which Service Is Right for You?</h2>
       <p>Book a free 20-minute discovery call and we'll figure it out together.</p>
-      <a href="contact.html" class="btn btn--gold btn--lg">Book Free Call</a>
+      <a href="contact.html" class="btn btn--dark btn--lg">Book Free Call</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
@@ -186,7 +332,7 @@
       <div class="footer__contact">
         <h4>Get in Touch</h4>
         <p>📧 successmentoringacademy@gmail.com</p>
-        <p>📱 +234813512849</p>
+        <p>📱 +2349133098555</p>
         <p>📍 Nigeria</p>
         <div class="footer__socials">
           <a href="#" class="social-link">FB</a>
