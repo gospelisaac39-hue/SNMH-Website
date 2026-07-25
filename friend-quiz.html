@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Type of Friend Are You? – Success Nwoko Mentoring Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  :root{
+    --fq-bg:#FAFAF8;
+    --fq-text:#111111;
+    --fq-text-light:#5A5A5A;
+    --fq-accent:#F58A4B;
+    --fq-accent-dark:#E07434;
+    --fq-track:#ECECE6;
+    --fq-border:#E5E4DD;
+  }
+  .fq-app{
+    background:var(--fq-bg);
+    color:var(--fq-text);
+    font-family:var(--font-body);
+    min-height:100vh;
+  }
+  .fq-stage{
+    max-width:640px;
+    margin:0 auto;
+    padding:5rem 1.5rem 4rem;
+    min-height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .fq-hidden{ display:none !important; }
+
+  /* LANDING */
+  .fq-eyebrow{
+    font-size:0.68rem;
+    font-weight:600;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--fq-accent-dark);
+    margin-bottom:1.25rem;
+    text-align:center;
+  }
+  .fq-landing h1{
+    font-family:var(--font-display);
+    font-size:clamp(2.1rem,5vw,3.2rem);
+    font-weight:600;
+    text-align:center;
+    line-height:1.15;
+    margin-bottom:1.5rem;
+  }
+  .fq-landing .fq-sub{
+    font-size:1.05rem;
+    font-weight:500;
+    text-align:center;
+    color:var(--fq-text);
+    line-height:1.6;
+    margin-bottom:1.75rem;
+  }
+  .fq-landing .fq-body{
+    font-size:0.95rem;
+    color:var(--fq-text-light);
+    line-height:1.85;
+    text-align:center;
+    margin-bottom:1.5rem;
+  }
+  .fq-landing .fq-tagline{
+    font-size:0.95rem;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:2.5rem;
+  }
+  .fq-cta-wrap{ text-align:center; }
+  .fq-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.6rem;
+    background:var(--fq-accent);
+    color:#fff;
+    border:none;
+    padding:1.05rem 2.4rem;
+    border-radius:100px;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:0.95rem;
+    cursor:pointer;
+    transition:all 0.2s ease;
+    text-decoration:none;
+  }
+  .fq-btn:hover{ background:var(--fq-accent-dark); transform:translateY(-2px); }
+  .fq-btn:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
+  .fq-btn--ghost{
+    background:transparent;
+    color:var(--fq-text);
+    border:1.5px solid var(--fq-border);
+  }
+  .fq-btn--ghost:hover{ background:var(--fq-track); }
+  .fq-microtext{
+    font-size:0.78rem;
+    color:var(--fq-text-light);
+    text-align:center;
+    margin-top:1rem;
+  }
+
+  /* LEAD CAPTURE */
+  .fq-lead h1, .fq-intro h1{
+    font-family:var(--font-display);
+    font-size:clamp(1.8rem,4vw,2.4rem);
+    font-weight:600;
+    text-align:center;
+    margin-bottom:1rem;
+  }
+  .fq-lead p, .fq-intro p{
+    font-size:0.95rem;
+    color:var(--fq-text-light);
+    line-height:1.75;
+    text-align:center;
+    margin-bottom:2rem;
+  }
+  .fq-field{
+    margin-bottom:1rem;
+  }
+  .fq-field input{
+    width:100%;
+    padding:1rem 1.2rem;
+    border:1.5px solid var(--fq-border);
+    border-radius:12px;
+    font-family:var(--font-body);
+    font-size:0.95rem;
+    background:#fff;
+    color:var(--fq-text);
+  }
+  .fq-field input:focus{
+    outline:none;
+    border-color:var(--fq-accent);
+  }
+  .fq-error{
+    color:#C0392B;
+    font-size:0.8rem;
+    margin-top:0.5rem;
+    display:none;
+    text-align:center;
+  }
+
+  /* QUIZ */
+  .fq-quiz-wrap{ padding-bottom:6rem; }
+  .fq-qnum{
+    font-size:0.75rem;
+    font-weight:600;
+    letter-spacing:0.1em;
+    color:var(--fq-accent-dark);
+    text-align:center;
+    margin-bottom:1.5rem;
+  }
+  .fq-question{
+    font-family:var(--font-display);
+    font-size:clamp(1.5rem,4vw,2rem);
+    font-weight:600;
+    text-align:center;
+    line-height:1.3;
+    margin-bottom:3rem;
+  }
+  .fq-scale{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:420px;
+    margin:0 auto 1rem;
+    padding:0 6px;
+  }
+  .fq-scale::before{
+    content:'';
+    position:absolute;
+    left:6px; right:6px; top:50%;
+    height:2px;
+    background:var(--fq-border);
+    transform:translateY(-50%);
+    z-index:0;
+  }
+  .fq-dot{
+    position:relative;
+    z-index:1;
+    width:26px; height:26px;
+    border-radius:50%;
+    border:2px solid var(--fq-border);
+    background:#fff;
+    cursor:pointer;
+    transition:all 0.15s ease;
+    padding:0;
+  }
+  .fq-dot:hover{ border-color:var(--fq-accent); transform:scale(1.1); }
+  .fq-dot.is-selected{
+    background:var(--fq-accent);
+    border-color:var(--fq-accent);
+    transform:scale(1.15);
+  }
+  .fq-scale-labels{
+    display:flex;
+    justify-content:space-between;
+    max-width:420px;
+    margin:0 auto;
+    font-size:0.7rem;
+    color:var(--fq-text-light);
+  }
+  .fq-scale-labels span:nth-child(2){ text-align:center; flex:1; }
+  .fq-scale-labels span:first-child{ text-align:left; width:90px; }
+  .fq-scale-labels span:last-child{ text-align:right; width:90px; }
+
+  .fq-back{
+    position:fixed;
+    top:calc(66px + 1rem);
+    left:1.5rem;
+    background:#fff;
+    border:1.5px solid var(--fq-border);
+    border-radius:50%;
+    width:42px; height:42px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    font-size:1.1rem;
+    z-index:20;
+  }
+  .fq-back:hover{ background:var(--fq-track); }
+
+  .fq-progress-bar{
+    position:fixed;
+    bottom:0; left:0; right:0;
+    background:#fff;
+    border-top:1px solid var(--fq-border);
+    padding:0.85rem 1.5rem;
+    z-index:20;
+  }
+  .fq-progress-track{
+    max-width:640px;
+    margin:0 auto 0.4rem;
+    height:6px;
+    background:var(--fq-track);
+    border-radius:100px;
+    overflow:hidden;
+  }
+  .fq-progress-fill{
+    height:100%;
+    background:var(--fq-accent);
+    border-radius:100px;
+    transition:width 0.3s ease;
+    width:0%;
+  }
+  .fq-progress-pct{
+    max-width:640px;
+    margin:0 auto;
+    text-align:center;
+    font-size:0.75rem;
+    color:var(--fq-text-light);
+  }
+
+  /* RESULTS */
+  .fq-results{ max-width:720px; margin:0 auto; padding:4rem 1.5rem 5rem; }
+  .fq-validity{
+    background:#FFF4E8;
+    border:1px solid #F2D2A9;
+    color:#7A4A12;
+    font-size:0.85rem;
+    padding:1rem 1.25rem;
+    border-radius:12px;
+    margin-bottom:2.5rem;
+    text-align:center;
+  }
+  .fq-reveal{ text-align:center; margin-bottom:3rem; }
+  .fq-reveal h1{
+    font-family:var(--font-display);
+    font-size:clamp(2rem,5vw,2.8rem);
+    font-weight:700;
+    margin-bottom:1rem;
+  }
+  .fq-reveal p{
+    font-size:0.95rem;
+    color:var(--fq-text-light);
+    line-height:1.8;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .fq-master{
+    background:#111111;
+    color:#fff;
+    border-radius:20px;
+    padding:2.25rem 2rem;
+    margin-bottom:2.5rem;
+  }
+  .fq-master-label{
+    font-size:0.7rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:#F2B98A;
+    margin-bottom:0.75rem;
+  }
+  .fq-master-bar-row{
+    display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem;
+  }
+  .fq-master-track{
+    flex:1; height:14px; background:rgba(255,255,255,0.15); border-radius:100px; overflow:hidden;
+  }
+  .fq-master-fill{
+    height:100%; background:var(--fq-accent); border-radius:100px; width:0%; min-width:2.75rem; transition:width 1s ease;
+    display:flex; align-items:center; justify-content:flex-end;
+  }
+  .fq-master-score{ font-weight:700; font-size:0.95rem; min-width:2.5rem; text-align:right; }
+  .fq-master-sentence{ font-size:0.9rem; line-height:1.7; color:#E8E8E8; }
+  .fq-master-sentence strong{ color:#fff; }
+
+  .fq-chart{ margin-bottom:3rem; }
+  .fq-chart h3{
+    font-family:var(--font-display);
+    font-size:1.3rem;
+    font-weight:600;
+    margin-bottom:1.5rem;
+    text-align:center;
+  }
+  .fq-bar-row{
+    display:flex; align-items:center; gap:0.9rem; margin-bottom:1rem;
+  }
+  .fq-bar-icon{ font-size:1.2rem; width:1.6rem; text-align:center; flex-shrink:0; }
+  .fq-bar-name{
+    width:120px; flex-shrink:0; font-size:0.85rem; font-weight:500;
+  }
+  .fq-bar-row.is-dominant .fq-bar-name{ font-weight:700; }
+  .fq-bar-track{
+    flex:1; height:22px; background:var(--fq-track); border-radius:100px; overflow:hidden;
+  }
+  .fq-bar-fill{
+    height:100%; background:var(--fq-accent); border-radius:100px; width:0%; min-width:2.25rem;
+    transition:width 1.1s cubic-bezier(0.16,1,0.3,1);
+    display:flex; align-items:center; justify-content:flex-end; padding-right:0.6rem;
+  }
+  .fq-bar-row.is-dominant .fq-bar-fill{ background:var(--fq-accent-dark); }
+  .fq-bar-score{ color:#fff; font-size:0.72rem; font-weight:700; }
+
+  .fq-profile{
+    background:#fff;
+    border:1px solid var(--fq-border);
+    border-radius:20px;
+    padding:2.5rem 2.25rem;
+    margin-bottom:1.5rem;
+  }
+  .fq-profile h3{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    font-weight:700;
+    margin-bottom:0.5rem;
+  }
+  .fq-profile .fq-quote{
+    font-style:italic;
+    color:var(--fq-accent-dark);
+    font-size:1rem;
+    margin-bottom:1.25rem;
+  }
+  .fq-profile p{
+    font-size:0.92rem;
+    color:var(--fq-text-light);
+    line-height:1.85;
+  }
+
+  .fq-reframe{
+    text-align:center;
+    padding:3rem 1.5rem;
+    margin:3rem 0;
+  }
+  .fq-reframe p{
+    font-size:1rem;
+    line-height:1.8;
+    max-width:520px;
+    margin:0 auto 1.75rem;
+  }
+
+  .fq-share{
+    background:var(--fq-track);
+    border-radius:20px;
+    padding:2rem;
+    text-align:center;
+    margin-bottom:2rem;
+  }
+  .fq-share p{ font-size:0.92rem; margin-bottom:1rem; font-weight:500; }
+  .fq-share-copied{
+    font-size:0.8rem;
+    color:var(--fq-accent-dark);
+    margin-top:0.6rem;
+    display:none;
+  }
+
+  @media (max-width:600px){
+    .fq-stage{ padding-top:4rem; }
+    .fq-back{ top:calc(60px + 0.75rem); }
+    .fq-master{ padding:1.75rem 1.25rem; }
+    .fq-profile{ padding:2rem 1.5rem; }
+    .fq-bar-name{ width:88px; font-size:0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="fq-app">
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img class="nav__logo-img" src="assets/logo.jpg" alt="Success Nwoko Mentoring Academy logo">
+        <span class="nav__logo-text">Success Nwoko Mentoring Hub</span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="books.html" class="nav__link">Books</a></li>
+        <li><a href="services.html" class="nav__link active">Services</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="cohort2.html" class="nav__cta">Register for Cohort 2</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- BACK ARROW (quiz only) -->
+  <button class="fq-back fq-hidden" id="fqBack" aria-label="Previous question">←</button>
+
+  <!-- STAGE 1: LANDING -->
+  <section class="fq-stage fq-landing" id="fqLanding">
+    <p class="fq-eyebrow">Free Assessment</p>
+    <h1>What Type of Friend Are You?</h1>
+    <p class="fq-sub">There are 10 types of friends. Each one shows love differently — and each one quietly gets in its own way. Most people have no idea which one they are.</p>
+    <p class="fq-body">The way you handle a dry text, a hard conversation, or a friend's bad news isn't random. It's a pattern — one that decides whether you speak up or swallow it, show up or pull away, open up or perform. This assessment identifies your type, and shows you the one thing it's quietly costing your closest friendships.</p>
+    <p class="fq-tagline">30 questions. 3 minutes. Uncomfortably accurate.</p>
+    <div class="fq-cta-wrap">
+      <button class="fq-btn" id="fqStartBtn">Find Out My Type</button>
+      <p class="fq-microtext">No right answers. Every option is a measurement.</p>
+    </div>
+  </section>
+
+  <!-- STAGE 1.5: LEAD CAPTURE -->
+  <section class="fq-stage fq-lead fq-hidden" id="fqLead">
+    <h1>Before we begin</h1>
+    <p>Enter your details so we can save your results and send them to you — you'll be able to revisit your friend type anytime.</p>
+    <form id="fqLeadForm">
+      <div class="fq-field">
+        <input type="text" id="fqName" placeholder="First name" autocomplete="given-name" required>
+      </div>
+      <div class="fq-field">
+        <input type="email" id="fqEmail" placeholder="Email address" autocomplete="email" required>
+      </div>
+      <p class="fq-error" id="fqLeadError">Please enter your name and a valid email address.</p>
+      <div class="fq-cta-wrap">
+        <button type="submit" class="fq-btn" id="fqLeadSubmit">Continue to Assessment</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- STAGE 2a: PRE-QUIZ INTRO -->
+  <section class="fq-stage fq-intro fq-hidden" id="fqIntro">
+    <h1>One thing before you start</h1>
+    <p>Answer based on how you actually behave in your friendships — not how you'd like to. There are no good or bad answers, only honest and dishonest ones. Your Saboteurs are counting on the dishonest ones.</p>
+    <div class="fq-cta-wrap">
+      <button class="fq-btn" id="fqBeginBtn">Begin</button>
+    </div>
+  </section>
+
+  <!-- STAGE 2b: QUIZ -->
+  <section class="fq-stage fq-quiz-wrap fq-hidden" id="fqQuiz">
+    <p class="fq-qnum" id="fqQnum">1 / 30</p>
+    <p class="fq-question" id="fqQuestionText"></p>
+    <div class="fq-scale" id="fqScale">
+      <button class="fq-dot" data-val="0"></button>
+      <button class="fq-dot" data-val="1"></button>
+      <button class="fq-dot" data-val="2"></button>
+      <button class="fq-dot" data-val="3"></button>
+      <button class="fq-dot" data-val="4"></button>
+    </div>
+    <div class="fq-scale-labels">
+      <span>Strongly Disagree</span>
+      <span>Neutral</span>
+      <span>Strongly Agree</span>
+    </div>
+  </section>
+
+  <!-- PROGRESS BAR -->
+  <div class="fq-progress-bar fq-hidden" id="fqProgressBar">
+    <div class="fq-progress-track"><div class="fq-progress-fill" id="fqProgressFill"></div></div>
+    <p class="fq-progress-pct" id="fqProgressPct">0%</p>
+  </div>
+
+  <!-- STAGE 4: RESULTS -->
+  <section class="fq-results fq-hidden" id="fqResults"></section>
+
+  <footer class="footer" id="fqFooter">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">
+          <img class="nav__logo-img" src="assets/logo.jpg" alt="Success Nwoko Mentoring Academy logo">
+          <span class="nav__logo-text">Success Nwoko Mentoring Hub</span>
+        </a>
+        <p>Raising spiritually intelligent and emotionally intelligent leaders through structured mentorship, transformational teaching, and value-driven systems.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Get in Touch</h4>
+        <p>📧 successmentoringacademy@gmail.com</p>
+        <p>📱 +2349133098555</p>
+        <p>📍 Nigeria</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 Success Nwoko Mentoring Hub. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+
+  /* ============ DATA ============ */
+
+  var QUESTIONS = [
+    "I have high discomfort with conflict in my friendships and avoid dealing with it.",
+    "I can be too much of a perfectionist about how things should be done, and it frustrates me when others fall short.",
+    "I am usually more anxious about my friendships than others around me seem to be.",
+    "I find it hard to say no to friends, even when I want to.",
+    "I tend to take charge of plans and situations, and get impatient when things are out of my control.",
+    "I need to be achieving or impressive to feel like I belong.",
+    "I judge others, myself, and my circumstances more harshly than I let on.",
+    "I get restless and bored quickly, and I'm often already thinking about the next thing.",
+    "I deal with emotional situations through logic and analysis rather than feelings.",
+    "I feel I give more in my friendships than I receive, and it goes unnoticed.",
+    "I would rather let a friendship quietly fade than have a difficult conversation about it.",
+    "I hold myself and my friends to standards that few people can actually meet.",
+    "I read deeply into small signals — a short reply, a change in tone — and assume something is wrong.",
+    "I lose sight of my own needs while taking care of everyone else's.",
+    "I believe things tend to go wrong when I'm not the one handling them.",
+    "I show my friends my successes far more readily than my struggles.",
+    "I have a strong inner critic that comments on almost everything I and others do.",
+    "I am rarely fully content with the current moment, place, or company.",
+    "I can come across as detached or unemotional, even to people close to me.",
+    "I focus on painful feelings and difficult experiences more than most people I know.",
+    "When someone is upset with me, I go quiet or distant rather than talk it through.",
+    "It genuinely bothers me when things are messy, late, or done carelessly.",
+    "I replay conversations afterward, checking whether I said something wrong.",
+    "I keep the peace by agreeing outwardly, even when I disagree inside.",
+    "I give friends advice and direction more often than they ask for it.",
+    "I compare myself to my friends more than I would ever admit to them.",
+    "I notice people's flaws and mistakes quickly, including my own.",
+    "I take on too many plans, people, and commitments to stay stimulated.",
+    "When friends bring me their feelings, I move to fixing the problem rather than sitting with them.",
+    "When my life is going well, I downplay it — struggle feels easier to share."
+  ];
+
+  var SABOTEURS = [
+    {
+      key:'distancer', name:'The Distancer', article:'a', icon:'🚪', master:false,
+      qs:[1,11,21],
+      quote:"When it gets real, I quietly step back.",
+      profile:"You keep peace by keeping silent — heavy texts wait days, conflicts are never raised, friendships fade instead of getting repaired. But unspoken problems compound, and friends experience your avoidance as not caring. You lose people you love over conversations that never happened, and call it growing apart. It began when conflict felt dangerous or pointless, and silence became safety.",
+      pairing:"making every hard conversation feel like a trial"
+    },
+    {
+      key:'perfectionist', name:'The Perfectionist', article:'a', icon:'📏', master:false,
+      qs:[2,12,22],
+      quote:"There's a right way, and it bothers me when it's missed.",
+      profile:"Past a point, standards stop improving things and start replacing people. Friends stop showing you rough drafts — of plans, of work, of themselves — because everything shown gets assessed. You carry everything alone and mistake your resentment for proof that people are careless. It began when getting things exactly right was the price of being okay — and you're still paying it.",
+      pairing:"grading everyone, starting with you"
+    },
+    {
+      key:'worrier', name:'The Worrier', article:'a', icon:'👀', master:false,
+      qs:[3,13,23],
+      quote:"One dry text and I'm investigating.",
+      profile:"You scan every friendship for danger — tones, response times, seating. But vigilance manufactures the threats it hunts: you react to imagined slights with real withdrawal, creating the distance you feared, and reassurance never holds. It began where safety was unpredictable and reading the room early prevented pain. It was intelligence then. It's static now.",
+      pairing:"turning every dry text into evidence"
+    },
+    {
+      key:'pleaser', name:'The Pleaser', article:'a', icon:'🙂', master:false,
+      qs:[4,14,24],
+      quote:"I agree, so I'm easy to love.",
+      profile:"You earn closeness by being easy: agreeing, helping, having no needs. But agreeableness isn't intimacy — people can only love the version of you they're shown, and you never show the real one. Resentment builds silently, leaks out as sudden distance, and confuses friends who were never told anything was wrong. It came from somewhere early: you learned acceptance was earned by being low-maintenance, and that your needs were a burden.",
+      pairing:"judging you into agreeableness"
+    },
+    {
+      key:'adviser', name:'The Adviser', article:'an', icon:'🧭', master:false,
+      qs:[5,15,25],
+      quote:"I run the friendship — and I can't stop.",
+      profile:"You connect by managing — the plans, the group, other people's decisions. But unrequested advice is quiet control, and friends experience it as not being trusted with their own lives. They bring you logistics, not closeness. You carry everything, resent it, and can't put it down — because being needed became your substitute for being known. It began when things went wrong unless you took charge, and control became safety.",
+      pairing:"convincing you nobody else will get it right"
+    },
+    {
+      key:'performer', name:'The Performer', article:'a', icon:'🏆', master:false,
+      qs:[6,16,26],
+      quote:"Am I in my friendships, or performing them?",
+      profile:"You show the highlight reel and archive the losses. Friends admire you and don't know you — because admiration is not affection, and support can't reach struggles you never share. Between wins, you feel strangely lonely in full rooms. It began when attention arrived with achievement and went quiet without it: you learned to convert worth into evidence.",
+      pairing:"telling you you're only as lovable as your last win"
+    },
+    {
+      key:'critic', name:'The Critic', article:'a', icon:'🔍', master:true,
+      qs:[7,17,27],
+      quote:"I'm always assessing — them, and me hardest.",
+      profile:"You run constant commentary on everyone — sharpest on yourself. People feel graded around you, so they stop being unguarded around you, and unguarded is where friendship lives. Nobody in your friendships is relaxed, including you. It began with a voice whose standards you could never meet — and you made it your own.",
+      pairing:null
+    },
+    {
+      key:'restless', name:'The Restless', article:'a', icon:'🌀', master:false,
+      qs:[8,18,28],
+      quote:"I'm everywhere, so I'm never fully here.",
+      profile:"You collect plans, places, and people — and depth requires the still, unglamorous moments you're never in. Friends feel like stops on an itinerary; your closest relationships plateau at \"fun.\" When a hard season comes, you find the depth was never built. It began when stillness meant feeling things you didn't want to feel, and motion became the anesthetic.",
+      pairing:"making stillness feel like falling behind"
+    },
+    {
+      key:'analyst', name:'The Analyst', article:'an', icon:'🧠', master:false,
+      qs:[9,19,29],
+      quote:"I think feelings instead of feeling them.",
+      profile:"You answer emotion with frameworks. Friends learn that bringing you feelings gets them a lecture, so they bring you problems only — and take their hearts elsewhere. You become respected, consulted, and never confided in. It began when emotions were overwhelming or unwelcome, so you moved upstairs into your head, where things stay orderly.",
+      pairing:"ruling your feelings inadmissible"
+    },
+    {
+      key:'victim', name:'The Victim', article:'a', icon:'⚖️', master:false,
+      qs:[10,20,30],
+      quote:"I give, I suffer, and I keep score quietly.",
+      profile:"You bond through struggle and keep a silent ledger of unmatched giving. But pain gets attention, not intimacy — friends either burn out caretaking or avoid the heaviness, and both get logged as abandonment. Friends keep failing tests they never knew they were taking. It began when being okay meant being overlooked, and struggling was the one reliable way to be seen.",
+      pairing:"keeping the record of everything owed to you"
+    }
+  ];
+
+  var CRITIC = SABOTEURS.filter(function(s){ return s.master; })[0];
+  var ACCOMPLICES = SABOTEURS.filter(function(s){ return !s.master; });
+
+  /* ============ STATE ============ */
+
+  var state = {
+    answers: new Array(30).fill(null),
+    current: 0,
+    name: '',
+    email: '',
+    milestones: {}
+  };
+
+  var els = {
+    landing: document.getElementById('fqLanding'),
+    lead: document.getElementById('fqLead'),
+    intro: document.getElementById('fqIntro'),
+    quiz: document.getElementById('fqQuiz'),
+    results: document.getElementById('fqResults'),
+    footer: document.getElementById('fqFooter'),
+    progressBar: document.getElementById('fqProgressBar'),
+    progressFill: document.getElementById('fqProgressFill'),
+    progressPct: document.getElementById('fqProgressPct'),
+    back: document.getElementById('fqBack'),
+    qnum: document.getElementById('fqQnum'),
+    qtext: document.getElementById('fqQuestionText'),
+    scale: document.getElementById('fqScale')
+  };
+
+  var ALL_STAGES = [els.landing, els.lead, els.intro, els.quiz, els.results];
+
+  function showStage(el){
+    ALL_STAGES.forEach(function(s){ s.classList.add('fq-hidden'); });
+    el.classList.remove('fq-hidden');
+  }
+
+  /* ============ TRACKING ============ */
+
+  function trackEvent(name, data){
+    try{
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({event: name}, data || {}));
+    }catch(e){}
+    if (window.console && console.debug) console.debug('[fq event]', name, data || {});
+  }
+
+  /* ============ LANDING -> LEAD ============ */
+
+  document.getElementById('fqStartBtn').addEventListener('click', function(){
+    trackEvent('quiz_start');
+    showStage(els.lead);
+    window.scrollTo(0,0);
+  });
+
+  document.getElementById('fqLeadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fqName').value.trim();
+    var email = document.getElementById('fqEmail').value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var errEl = document.getElementById('fqLeadError');
+    if (!name || !emailOk){
+      errEl.style.display = 'block';
+      return;
+    }
+    errEl.style.display = 'none';
+    state.name = name;
+    state.email = email;
+    trackEvent('email_submitted', {name: name});
+    submitToSheet({ event: 'lead_captured', name: name, email: email });
+    showStage(els.intro);
+    window.scrollTo(0,0);
+  });
+
+  /* ============ INTRO -> QUIZ ============ */
+
+  document.getElementById('fqBeginBtn').addEventListener('click', function(){
+    state.current = 0;
+    showStage(els.quiz);
+    els.back.classList.remove('fq-hidden');
+    els.progressBar.classList.remove('fq-hidden');
+    els.footer.classList.add('fq-hidden');
+    renderQuestion();
+    window.scrollTo(0,0);
+  });
+
+  /* ============ QUIZ ============ */
+
+  function renderQuestion(){
+    var i = state.current;
+    els.qnum.textContent = (i + 1) + ' / 30';
+    els.qtext.textContent = QUESTIONS[i];
+    var dots = els.scale.querySelectorAll('.fq-dot');
+    dots.forEach(function(dot){
+      var val = parseInt(dot.getAttribute('data-val'), 10);
+      dot.classList.toggle('is-selected', state.answers[i] === val);
+    });
+    els.back.style.visibility = i === 0 ? 'hidden' : 'visible';
+    updateProgress();
+  }
+
+  function updateProgress(){
+    var answeredCount = state.answers.filter(function(a){ return a !== null; }).length;
+    var pct = Math.round((answeredCount / 30) * 100);
+    els.progressFill.style.width = pct + '%';
+    els.progressPct.textContent = pct + '%';
+
+    [8,15,23].forEach(function(qAt){
+      var pctLabel = qAt === 8 ? '25' : (qAt === 15 ? '50' : '75');
+      if (answeredCount >= qAt && !state.milestones[pctLabel]){
+        state.milestones[pctLabel] = true;
+        trackEvent('question_' + pctLabel + '_percent');
+      }
+    });
+  }
+
+  els.scale.addEventListener('click', function(e){
+    var dot = e.target.closest('.fq-dot');
+    if (!dot) return;
+    var val = parseInt(dot.getAttribute('data-val'), 10);
+    state.answers[state.current] = val;
+    renderQuestion();
+
+    setTimeout(function(){
+      if (state.current < 29){
+        state.current += 1;
+        renderQuestion();
+      } else {
+        trackEvent('quiz_complete');
+        finishQuiz();
+      }
+    }, 250);
+  });
+
+  els.back.addEventListener('click', function(){
+    if (state.current > 0){
+      state.current -= 1;
+      renderQuestion();
+    }
+  });
+
+  /* ============ SCORING ============ */
+
+  function computeScores(answers){
+    var groups = ACCOMPLICES.map(function(s){
+      var q1 = answers[s.qs[0]-1], q2 = answers[s.qs[1]-1], q3 = answers[s.qs[2]-1];
+      var raw = q1 + q2 + q3;
+      var display = Math.round((raw / 12 * 10) * 10) / 10;
+      return {
+        key:s.key, name:s.name, article:s.article, icon:s.icon,
+        quote:s.quote, profile:s.profile, pairing:s.pairing,
+        raw:raw, display:display, thirdAnswer:q3
+      };
+    });
+
+    var craw = CRITIC.qs.reduce(function(sum, q){ return sum + answers[q-1]; }, 0);
+    var cdisplay = Math.round((craw / 12 * 10) * 10) / 10;
+
+    var sorted = groups.slice().sort(function(a,b){
+      if (b.display !== a.display) return b.display - a.display;
+      return b.thirdAnswer - a.thirdAnswer;
+    });
+
+    var dominant = sorted[0];
+    var secondary = sorted[1];
+    var dualWith = null;
+    if (sorted[0].display === sorted[1].display && sorted[0].thirdAnswer === sorted[1].thirdAnswer){
+      dualWith = sorted[1];
+    }
+
+    return {
+      accomplices: sorted,
+      critic: {name: CRITIC.name, icon: CRITIC.icon, raw: craw, display: cdisplay},
+      dominant: dominant,
+      secondary: secondary,
+      dualWith: dualWith
+    };
+  }
+
+  function checkValidity(answers){
+    var counts = {};
+    answers.forEach(function(a){ counts[a] = (counts[a]||0) + 1; });
+    var max = Math.max.apply(null, Object.keys(counts).map(function(k){ return counts[k]; }));
+    return max < 24;
+  }
+
+  /* ============ SHARE LINK ============ */
+
+  function buildShareUrl(answers, name){
+    var base = location.origin + location.pathname;
+    var params = new URLSearchParams();
+    params.set('a', answers.join(''));
+    if (name) params.set('n', name);
+    return base + '?' + params.toString();
+  }
+
+  function tryLoadFromUrl(){
+    var params = new URLSearchParams(location.search);
+    var a = params.get('a');
+    if (a && /^[0-4]{30}$/.test(a)){
+      return {
+        answers: a.split('').map(Number),
+        name: params.get('n') || ''
+      };
+    }
+    return null;
+  }
+
+  /* ============ SUBMIT TO SHEET ============ */
+
+  function submitToSheet(payload){
+    fetch('/api/submit-quiz', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    }).catch(function(){ /* fail silently, do not block UX */ });
+  }
+
+  /* ============ RESULTS ============ */
+
+  function finishQuiz(){
+    renderResults(state.answers, state.name, false);
+  }
+
+  function renderResults(answers, name, fromDeepLink){
+    var scores = computeScores(answers);
+    var isValid = checkValidity(answers);
+    var dominant = scores.dominant;
+    var dualWith = scores.dualWith;
+    var dominantLabel = dualWith ? (dominant.name.replace('The ','') + '–' + dualWith.name.replace('The ','')) : dominant.name.replace('The ','');
+    var dominantArticle = dominant.article;
+
+    if (!fromDeepLink){
+      submitToSheet({
+        event: 'quiz_completed',
+        name: name,
+        email: state.email,
+        dominant: dominantLabel,
+        secondary: scores.secondary.name.replace('The ',''),
+        answers: answers,
+        scores: {
+          critic: scores.critic.display,
+          distancer: findScore(scores,'distancer'),
+          perfectionist: findScore(scores,'perfectionist'),
+          worrier: findScore(scores,'worrier'),
+          pleaser: findScore(scores,'pleaser'),
+          adviser: findScore(scores,'adviser'),
+          performer: findScore(scores,'performer'),
+          restless: findScore(scores,'restless'),
+          analyst: findScore(scores,'analyst'),
+          victim: findScore(scores,'victim')
+        }
+      });
+    }
+
+    var shareUrl = buildShareUrl(answers, name);
+    var shareText = "apparently I'm " + dominantArticle + " " + dominantLabel + " (" + dominant.display + ") 💀 what type of friend are you: " + shareUrl;
+
+    var html = '';
+
+    if (!isValid){
+      html += '<div class="fq-validity">Your answers suggest your Saboteurs stayed hidden this round. For sharper results, retake it answering as your closest friend would describe you.</div>';
+    }
+
+    html += '<div class="fq-reveal">';
+    html += '<h1>You\'re ' + dominantArticle + ' ' + dominantLabel + '.</h1>';
+    html += '<p>But here\'s what this quiz actually measured: not your friend type — your friendship Saboteur. The pattern that made you this type of friend is the same one quietly working against your friendships. Here\'s yours.</p>';
+    html += '</div>';
+
+    html += '<div class="fq-master">';
+    html += '<div class="fq-master-label">Your Master Saboteur — The Critic</div>';
+    html += '<div class="fq-master-bar-row"><div class="fq-master-track"><div class="fq-master-fill" data-target="' + (scores.critic.display*10) + '"><span class="fq-master-score">' + scores.critic.display.toFixed(1) + '</span></div></div></div>';
+    html += '<p class="fq-master-sentence">Your Critic (<strong>' + scores.critic.display.toFixed(1) + '</strong>) is feeding your ' + dominant.name.replace('The ','') + ' (<strong>' + dominant.display.toFixed(1) + '</strong>) — ' + (dominant.pairing || '') + '.</p>';
+    html += '</div>';
+
+    html += '<div class="fq-chart"><h3>Your Full Pattern</h3>';
+    scores.accomplices.forEach(function(s){
+      var isDom = s.key === dominant.key || (dualWith && s.key === dualWith.key);
+      html += '<div class="fq-bar-row' + (isDom ? ' is-dominant' : '') + '">';
+      html += '<div class="fq-bar-icon">' + s.icon + '</div>';
+      html += '<div class="fq-bar-name">' + s.name.replace('The ','') + '</div>';
+      html += '<div class="fq-bar-track"><div class="fq-bar-fill" data-target="' + (s.display*10) + '"><span class="fq-bar-score">' + s.display.toFixed(1) + '</span></div></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+
+    [dominant, dualWith].forEach(function(s){
+      if (!s) return;
+      html += '<div class="fq-profile">';
+      html += '<h3>' + s.name + '</h3>';
+      html += '<div class="fq-quote">"' + s.quote + '"</div>';
+      html += '<p>' + s.profile + '</p>';
+      html += '</div>';
+    });
+
+    html += '<div class="fq-reframe">';
+    html += '<p>Your ' + dominant.name.replace('The ','') + ' isn\'t who you are. It\'s a survival pattern that outlived its purpose — and patterns can be weakened. Every point you bring this score down, your friendships get lighter, closer, and more honest.</p>';
+    html += '<a href="contact.html" class="fq-btn" id="fqCtaBtn">Start weakening your ' + dominant.name.replace('The ','') + ' →</a>';
+    html += '</div>';
+
+    html += '<div class="fq-share">';
+    html += '<p>Send this to your group chat — see who gets what.</p>';
+    html += '<button class="fq-btn fq-btn--ghost" id="fqShareBtn">Copy Share Link</button>';
+    html += '<p class="fq-share-copied" id="fqShareCopied">Copied! Paste it anywhere.</p>';
+    html += '</div>';
+
+    els.results.innerHTML = html;
+
+    els.back.classList.add('fq-hidden');
+    els.progressBar.classList.add('fq-hidden');
+    els.footer.classList.remove('fq-hidden');
+    showStage(els.results);
+    window.scrollTo(0,0);
+
+    requestAnimationFrame(function(){
+      setTimeout(function(){
+        els.results.querySelectorAll('[data-target]').forEach(function(bar){
+          bar.style.width = bar.getAttribute('data-target') + '%';
+        });
+      }, 50);
+    });
+
+    var ctaBtn = document.getElementById('fqCtaBtn');
+    if (ctaBtn){
+      ctaBtn.addEventListener('click', function(){
+        trackEvent('cta_clicked', {dominant: dominantLabel});
+      });
+    }
+
+    var shareBtn = document.getElementById('fqShareBtn');
+    if (shareBtn){
+      shareBtn.addEventListener('click', function(){
+        var copiedEl = document.getElementById('fqShareCopied');
+        var doneUI = function(){
+          copiedEl.style.display = 'block';
+          trackEvent('share_copied', {dominant: dominantLabel});
+          setTimeout(function(){ copiedEl.style.display = 'none'; }, 2500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(shareText).then(doneUI).catch(function(){
+            fallbackCopy(shareText); doneUI();
+          });
+        } else {
+          fallbackCopy(shareText); doneUI();
+        }
+      });
+    }
+  }
+
+  function findScore(scores, key){
+    var m = scores.accomplices.filter(function(s){ return s.key === key; })[0];
+    return m ? m.display : null;
+  }
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  /* ============ INIT ============ */
+
+  var deepLink = tryLoadFromUrl();
+  if (deepLink){
+    els.footer.classList.remove('fq-hidden');
+    renderResults(deepLink.answers, deepLink.name, true);
+  } else {
+    showStage(els.landing);
+  }
+
+})();
+</script>
+</body>
+</html>
